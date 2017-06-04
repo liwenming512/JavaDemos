@@ -1,0 +1,10 @@
+#忽略jar、war文件
+*.jar
+*.war
+*.class
+
+#忽略目录
+spring-mvc-study/build
+spring-mvc-study/.settings
+spring-mvc-study/WebContent/js
+
