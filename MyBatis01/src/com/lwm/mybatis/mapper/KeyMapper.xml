@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwm.mybatis.mapper.KeyMapper">
+	<resultMap id="keyMap" type="KeyBean">
+		<id property="id" column="id" javaType="java.lang.Integer"></id>
+		<result property="key" column="key_name" javaType="java.lang.String"></result>
+	</resultMap>
+	<insert id="batchSaveKeys">
+		insert into t_key values
+		<foreach collection="keys" item="key" separator=",">
+			(null, #{key.key}, #{key.lock.id})
+		</foreach>
+	</insert>
+	<select id="findKeysByLockId" resultMap="keyMap">
+		select * from t_key where fk_lock_id= #{id}
+	</select>
+</mapper>
