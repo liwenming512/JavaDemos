@@ -1,0 +1,2 @@
+#Yibai教程
+hibernate的第二个示例，简单介绍hibernate中注解的用法。
