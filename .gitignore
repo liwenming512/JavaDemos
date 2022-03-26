@@ -4,6 +4,8 @@
 *.class
 
 #忽略目录
+.idea/
+
 spring-mvc-study/build
 spring-mvc-study/.settings
 spring-mvc-study/WebContent/js
